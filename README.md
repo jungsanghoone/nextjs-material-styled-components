@@ -1,9 +1,10 @@
+## **😀 Styled-Components with MUI **
 A TypeScript starter for Next.js that includes all you need to build amazing projects 🔥
 
-- **Next.js**
+- **Next.js(12.2.2)**
 - **TypeScript**
-- **Material-ui**
-- **styled-components**
+- **Mui(^5.9.0)**
+- **styled-components(^5.3.5)**
 - ESLint
 - Prettier
 - Husky
