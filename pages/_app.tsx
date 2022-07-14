@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../src/theme';
+import CssBaseline from '@mui/material/CssBaseline';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import PropTypes from 'prop-types';
+import theme from '../src/theme';
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
@@ -22,10 +22,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </>
   );
 }
